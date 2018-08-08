@@ -16,12 +16,19 @@ window.Bus = new Vue({})
 
 window.axios = require('axios')
 
+let Datastore = require('nedb')
+
+window.db = new Datastore()
+//window.db.business_units = new Datastore({ filename: './database/business_units', autoload: true })
+
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueTreeview)
 
 Vue.component('editor', require('vue2-ace-editor'))
 Vue.component('icon', Icon)
 Vue.component('content-builder-categories', require('./components/ContentBuilderCategories.vue'))
+Vue.component('business-unit-form', require('./components/forms/BusinessUnitForm.vue'))
+Vue.component('select-business-unit', require('./components/navigations/SelectBusinessUnit.vue'))
 
 sync(store, router)
 

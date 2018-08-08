@@ -2,7 +2,7 @@ import DatabaseModel from "./abstracts/DatabaseModel";
 
 export default class BusinessUnit extends DatabaseModel {
     constructor() {
-        super()
+        super('business_units')
 
         this.struct = {
             name: '',
